@@ -40,6 +40,7 @@ public class CategoryController {
     return new ResponseEntity<>(body, HttpStatus.OK);
   }
 
+
   @PostMapping("/update/{categoryID}")
   public ResponseEntity<ApiResponse> updateCategory(@PathVariable("categoryID") Integer categoryID,
                                                     @Valid @RequestBody Category category){
@@ -49,5 +50,6 @@ public class CategoryController {
     }
 
     return new ResponseEntity<>(new ApiResponse(false, "category does not exist"), HttpStatus.NOT_FOUND);
+
   }
 }
